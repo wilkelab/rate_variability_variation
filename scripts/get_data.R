@@ -1,0 +1,6 @@
+library(dplyr)
+enzyme_data = read.table(file = "../data/jec_ddg_209_monomers.csv", sep = ",", header = T)
+enzyme_out_data = data.frame(enzyme_data$pdb, enzyme_data$nsites, enzyme_data$nseq, enzyme_data$site, enzyme_data$rsa.tien, enzyme_data$r4s.jc.ej, enzyme_data$r4s.jtt.ej)
+enzyme_out_data = rename(enzyme_out_data,  pdb_id = enzyme_data.pdb, num_sites = enzyme_data.nsites, num_seqs = enzyme_data.nseq, site =  enzyme_data.site, rsa = enzyme_data.rsa.tien, r4c_jc = enzyme_data.r4s.jc.ej, r4s.jtt = enzyme_data.r4s.jtt.ej)
+enzyme_out_data = mutate(enzyme_out_data, data_id = "enzyme")
+write.csv(enzyme_out_data, "../data/huang_data.csv")
