@@ -32,7 +32,7 @@
 \graphicspath{{../figures/}}
 
 \title{Sequence variability as the main determinant of sequence-structure relationships}
-\author{Amir Shahmoradi$^{1*}$, Eleisha L. Jackson$^2$, Claus O. Wilke$^2$}
+\author{Amir Shahmoradi$^1$, Eleisha L. Jackson$^2$, Claus O. Wilke$^{2*}$}
 \begin{document}
 
 \date{\today}
@@ -46,7 +46,8 @@ $^2$ Institute of Cellular and Molecular Biology, Center for Computational Biolo
 \bigskip
 \noindent
 $^*$Corresponding author\\
-$\phantom{^*}$Email: amir@physics.utexas.edu\\
+%$\phantom{^*}$Email: amir@physics.utexas.edu\\
+$\phantom{^*}$Email: wilke@austin.utexas.edu\\
 %$\phantom{^*}$Phone:{ \color{red} Need a phone} \\
 $\phantom{^*}$Phone: +1 512 232 2459\\
 
@@ -58,7 +59,6 @@ Manuscript type: research article\\
 
 
 \begin{abstract}
-NEED TO EDIT THE ABSTRACT\\
 Recent work has shown that structural properties are capable of predicting site-specific sequence variability for a given protein. However, the strength and significance of these structure-sequence relations appear to vary widely among different proteins, with absolute correlation strengths ranging from $0.1$ to $0.8$. 
 \end{abstract}
 \vfill
@@ -71,7 +71,7 @@ Recent work has shown that structural properties are capable of predicting site-
 \label{sec:intro}
 
 Proteins are subject to a number of biophysical and functional constraints \citep{Scherreretal2012, Wilkeetal2010}. These constraints result site-specific patterns of sequence variability within a protein. Recently several site-specific structural properties that can explain patterns of sequence variability in proteins have been identified. One of the earliest examples is Relative Site Accessibility. \cite{Fransozaetal2009} identified RSA as the strongest predictor of evolutionary rate. They found that residues that are buried in the core of proteins tend to be more conserved than exposed residues close to the surface of the protein. In their analysis these concerned both RSA and various definitions of residue packing density to predict evolutionary rate. They found that RSA and evolutionary rate shared a significant linear relationship. Afterwards, several other works \citep{Ramseyetal2011, Scherreretal2012} also found that RSA as a very significant predictor of evolutionary rate and found this linear relationship as well. However in these papers all have the same flaw. During the course of their analysis they binned the protein sites and average over all sites within a bin when looking at the trend of RSA. This could produce artifacts when looking at the trend. \\
-\indent Later, Yeh et al performed a similar analysis on a series of enzyme monomer proteins and found that packing density, as defined by CN and WCN \citep{Liaoetal2005, Yehetal2014, Huangetal2014}, was the strongest determinant of site variability. A year later, Sharamoradi et al also performed a site-wise analysis on a series of viral proteins. In this analysis they found that RSA had the strongest correlation with site variability. Additionally the effect seen between CN and WCN was of a much smaller magnitude as compared to \citep{Yehetal2014}. Here we attempt to reconcile the work done in this area. We find that site variability is the primary determinant of structure determinant of the strength of structure-sequence relationships and some differences in previous work can be explained in terms of differing levels of site variability. \\
+\indent Later, \cite{Yehetal} performed a similar analysis on a series of enzyme monomer proteins and found that packing density, as defined by CN and WCN \citep{Liaoetal2005, Yehetal2014, Huangetal2014}, was the strongest determinant of site variability. A year later, \cite{Sharamoradietal} also performed a site-wise analysis on a series of viral proteins. In this analysis they found that RSA had the strongest correlation with site variability. Additionally the effect seen between CN and WCN was of a much smaller magnitude as compared to \citep{Yehetal2014}. Here we attempt to reconcile the work done in this area. We find that site variability is the primary determinant of structure determinant of the strength of structure-sequence relationships and some differences in previous work can be explained in terms of differing levels of site variability. \\
 
 
 \section{Materials and Methods}
@@ -84,12 +84,18 @@ Proteins are subject to a number of biophysical and functional constraints \cite
         H_i = -\sum_j P_{ij}\ln P_{ij}
     \end{equation}
 
-    where $P_{ij}$ is the relative frequency of amino acid $j$ at position $i$ in the alignment. The sequence entropy is a measure of variability at each site. We also calculated a measure of site-specific evolutionary rate -- hereafter abbreviated as {\it r4s} -- for each protein using software Rate4site. First the Maximum Likelihood phylogenetic trees were inferred with RAxML, using the LG substitution matrix and the CAT model of rate heterogeneity \citep{Stamatakis2006, Stamatakis2014}. For each structure, we then used the respective sequence alignment and phylogenetic tree to infer site-specific substitution rates with Rate4Site, using the empirical Bayesian method and the amino-acid Jukes-Cantor mutational model (aaJC) \citep{Mayroseetal2004}.
+    where $P_{ij}$ is the relative frequency of amino acid $j$ at position $i$ in the alignment. The sequence entropy is a measure of variability at each site. We also calculated a measure of site-specific evolutionary rate -- hereafter abbreviated as {\it r4s} -- for each protein using software Rate4site. First the Maximum Likelihood phylogenetic trees were inferred with RAxML, using the LG substitution matrix and the CAT model of rate heterogeneity \citep{Stamatakis2006, Stamatakis2014}. For each structure, we then used the respective sequence alignment and phylogenetic tree to infer site-specific substitution rates with Rate4Site, using the empirical Bayesian method and the JJT model of sequence evolution \citep{Mayroseetal2004}.
 
     \subsection*{Calculation of Structural Properties}
-  
-    HOW IS CN and WCN Defined and Calculated??? (Cite Shih et al for WCN) Possbily Lin Paper \\
-\indent We used DSSP \citep{Kabschetal2005}  for the calculation of Accessible Surface Area (ASA) for each site. We normalized the ASA for each site by the theoretical maximum solvent accessibility values of \cite{Tienetal2013}  to obtain the Relative Solvent Accessibility (RSA) for all individual sites in all proteins. In addition to ASA values, we also extract from DSSP output, information about the secondary structure of proteins such as the total number of residues participating in different types of helices, parallel or anti-parallel beta sheets, or loops and turns. To complete the list of pdb-level structural properties, we also calculate the Spearman correlations between all residue-level structure and sequence properties and include them in the analysis to probe their potential effects on the strength of structure-sequence relations. \\
+In our analysis we used to types of measures of local packing density used in previous studies: Contact Number and Weighted Contact Number). For the purposes of our comparison between the two datasets of interest we used the CN and WCN for the enzyme proteins from () and the CN and WCN values for the viral proteins from. In both of these works and in Yeh et al, WCN and CN are both defined the same.  Contact Number is defined as the number of $C_{\alpha}$ within a pre-redefined radius, $r_0$. In this case, $r_0$ = 13 as in the previous work. Weighed Contact Number for a residue, $i$,  is defined as in (Liao et al 2005, Huang et al 2014), as:
+	
+	\begin{equation} \label{wcn_eqn}
+		\text{WCN}_i = \sum_{i \neq j}^{N} \frac{1}{r_{ij}^2 } 
+	\end{equation}
+	
+	where $r_j$ is the length between the $C_{\alpha}$ of residue $i$ and residue $j$ in a protein of length $N$. 
+
+\indent We used DSSP \citep{Kabschetal2005}  for the calculation of Accessible Surface Area (ASA) for each site. We normalized the ASA for each site by the theoretical maximum solvent accessibility values of \cite{Tienetal2013}  to obtain the Relative Solvent Accessibility (RSA) for all individual sites in all proteins. \\
 
 All data and analysis scripts required to reproduce the work are publicly available to view and download at \url{https://github.com/wilkelab/rate_variability_variation}.
 
@@ -97,8 +103,7 @@ All data and analysis scripts required to reproduce the work are publicly availa
 \section{Results}
 \label{sec:results}
 
-    \subsection*{}
-{\color{red}SOME RESULTS.....} \\
+We calculate the strength between the structural properties and site variability by calculating the Spearman correlation between the structural property (solvent exposure and local packing density). On average the correlations between CN-Entropy are stronger in magnitude in the enzyme proteins as compared to viral proteins. The average rho between each structural property and each measure of site variability (entropy and evolutionary rates) can be seen in Table 1 and Table 2. The viral proteins experience much lower site variability. Figure 1 shows the correlations between CN and entropy for the virus and enzyme proteins. Even though on average the correlations in the enzyme proteins are larger, as reported, by \cite{Yehetal2014}, the virus proteins still have correlation strengths that are comparable to some of the enzyme proteins with lower correlations. The average site variability of a given protein does not seem to be a significant determinate of the strength of structural correlations (Figure 1A, 2A, 3A). However, when examining the variance of entropy there is a clear trend within the enzyme proteins. Proteins with a highr variance in city variability across the protein typically have lower correlations (Figure 1B, 2B, 3B) have lower correlations (Figure 1B, 2B, 3B). If you extrapoliate the trend from the enzyme proteins, the viral proteins follow a simllar trend. The correlation between the rho between RS and Entropy and the variance of entropy is positive. The correlation is negative between local packing density (both WCN and CN) and the variance of entropy. Unlike with entry, there is no relationship between variance of evolutionary rates at sites and any of the measured structural properties. There is a wide spread int he variance of the evolutionary rates across proteins for both the enzyme and viral proteins. 
 
 
 \section{Discussion}
