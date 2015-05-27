@@ -10,9 +10,8 @@ p1 = ggplot(correlation_data, aes(x = mean_entropy, y = rsa_entropy_rho, color =
 	theme_classic() + 
   	xlab("Mean Entropy") + 
   	ylab("Correlation RSA-Entropy") + 
-  	theme(text = element_text(size = 18)) + 
-  	theme(axis.text.x = element_text(face="bold")) + 
-  	theme(axis.line = element_line(size = 1.25)) + 
+  	theme(text = element_text(size = 18)) +  #Get rid of bold
+  	theme(axis.line = element_line(size = 1.25)) + #Make this thinner
   	theme(axis.ticks = element_line(size = 1.25)) + 
   	geom_point(size = 2) + 
   	stat_smooth(method = "lm", se = F, data = enzyme_data) + 
