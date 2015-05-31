@@ -104,9 +104,9 @@ All data and analysis scripts required to reproduce the work are publicly availa
 \section{Results}
 \label{sec:results}
 
-We calculate the strength between the structural properties and site variability by calculating the Spearman correlation, $\rho$,  between the structural property (solvent exposure and local packing density) and site variability, as measured by either evolutionary rate or site entropy. On average the correlations between CN and entropy are larger in absolute magnitude in the enzyme proteins as compared to viral proteins. The average $\rho$ between each structural property and each measure of site variability (entropy and evolutionary rates) can be seen in {\color{red}Table 1 and Table 2}. The viral proteins experience much lower site variability. Figure 1 shows the correlations between CN and entropy for the virus and enzyme proteins. Even though on average the correlations in the enzyme proteins are larger as reported, by \cite{Yehetal2014}, the virus proteins still have correlation strengths that are comparable to some of the enzyme proteins with lower correlations. 
+We calculate the strength between the structural properties and site variability by calculating the Spearman correlation, $\rho$,  between the structural property (solvent exposure and local packing density) and site variability, as measured by either evolutionary rate or site entropy. On average the correlations between CN and entropy are larger in absolute magnitude in the enzyme proteins as compared to viral proteins. The average $\rho$ between each structural property and each measure of site variability (entropy and evolutionary rates) can be seen in Table \ref{table:entropy_stats}  and Table \ref{table:rate_stats}. The viral proteins experience much lower site variability. Figure 1 shows the correlations between CN and entropy for the virus and enzyme proteins. Even though on average the correlations in the enzyme proteins are larger as reported, by \cite{Yehetal2014}, the virus proteins still have correlation strengths that are comparable to some of the enzyme proteins with lower correlations. 
 
-\indent  The average site variability of a given protein does not seem to be a significant determinant of the strength of structural correlations (Figure 1A, 2A, 3A). However, when examining the variance of entropy there is a clear trend within the enzyme proteins.  Proteins with a higher variance in site variability across the protein typically have have lower correlations (Figure 1B, 2B, 3B). If you extrapolate the trend from the enzyme proteins, the viral proteins follow a similar trend. The correlation between the $\rho$ between RSA and entropy and the variance of entropy is positive. The correlation is negative between local packing density (both WCN and CN) and the variance of entropy is negative. Unlike with entropy, there is no relationship between variance of evolutionary rates at sites and any of the measured structural properties. There also is a wide spread int he variance of the evolutionary rates across proteins for both the enzyme and viral proteins. 
+\indent  The average site variability of a given protein does not seem to be a significant determinant of the strength of structural correlations (Figures \ref{fig:entropy_cn_cor}A, \ref{fig:entropy_wcn_cor}A, \ref{fig:entropy_rsa_cor}A). However, when examining the variance of entropy there is a clear trend within the enzyme proteins.  Proteins with a higher variance in site variability across the protein typically have have lower correlations (Figures \ref{fig:entropy_cn_cor}B, \ref{fig:entropy_wcn_cor}B, \ref{fig:entropy_rsa_cor}B). If you extrapolate the trend from the enzyme proteins, the viral proteins follow a similar trend. The correlation between the $\rho$ between RSA and entropy and the variance of entropy is positive. The correlation is negative between local packing density (both WCN and CN) and the variance of entropy is negative. Unlike with entropy, there is no relationship between variance of evolutionary rates at sites and any of the measured structural properties. There also is a wide spread int he variance of the evolutionary rates across proteins for both the enzyme and viral proteins. 
 
 
 \section{Discussion}
@@ -134,40 +134,40 @@ The authors acknowledge the Texas Advanced Computing Center (TACC) at The Univer
     \begin{figure}[H]
             \centerline{\includegraphics[width=7.5in]{entropy_cn_cor.pdf}}     
             \caption{NEED A CAPTION!!!.}
-            \label{fig:seqent_structure_cors}
+            \label{fig:entropy_cn_cor}
     \end{figure}
 
 
     \begin{figure}[H]
             \centerline{\includegraphics[width=7.5in]{entropy_wcn_cor.pdf}}     
             \caption{NEED A CAPTION!!!.}
-            \label{fig:seqent_structure_cors}
+            \label{fig:entropy_wcn_cor}
     \end{figure}
 
 
     \begin{figure}[H]
             \centerline{\includegraphics[width=7.5in]{entropy_rsa_cor.pdf}}     
             \caption{NEED A CAPTION!!!.}
-            \label{fig:seqent_structure_cors}
+            \label{fig:entropy_rsa_cor}
     \end{figure}
   
        
         \begin{figure}[H]
             \centerline{\includegraphics[width=7.5in]{rate_cor.pdf}}     
             \caption{NEED A CAPTION!!!.}
-            \label{fig:seqent_structure_cors}
+            \label{fig:rate_cor}
     \end{figure}
         
             \begin{figure}[H]
             \centerline{\includegraphics[width=5.0in]{var_rate_rsa_cor.pdf}}     
             \caption{NEED A CAPTION!!!.}
-            \label{fig:seqent_structure_cors}
+            \label{fig:var_rate_rsa_cor}
     \end{figure}
     
         \begin{figure}[H]
             \centerline{\includegraphics[width=5.0in]{var_entropy_rate_cor.pdf}}     
             \caption{NEED A CAPTION!!!.}
-            \label{fig:seqent_structure_cors}
+            \label{fig:var_entropy_rate_cor}
     \end{figure}
  
  
@@ -206,7 +206,7 @@ The authors acknowledge the Texas Advanced Computing Center (TACC) at The Univer
 		\hline	
 	\end{tabular}
 	\caption{NEED A CAPTION}
-	\label{table:entropy_stats}
+	\label{table:rate_stats}
 	\end{table}
 \end{center}
 
@@ -234,7 +234,7 @@ The authors acknowledge the Texas Advanced Computing Center (TACC) at The Univer
 	\hline
 	\end{tabular}
 	\caption{NEED A CAPTION. *** means p-value is less than 0.001. ** means p-value is less than 0.01.  * means p-value is less than 0.05. }
-	\label{table:rate_stats}
+	\label{table:model_stats}
 	\end{table}
 \end{center}
 
