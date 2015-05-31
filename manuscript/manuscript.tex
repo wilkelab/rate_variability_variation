@@ -89,7 +89,7 @@ Proteins are subject to a number of biophysical and functional constraints \cite
     where $P_{ij}$ is the relative frequency of amino acid $j$ at position $i$ in the alignment. The sequence entropy is a measure of variability at each site. We also calculated a measure of site-specific evolutionary rate for each protein using software Rate4site. First the Maximum Likelihood phylogenetic trees were inferred with RAxML, using the LG substitution matrix and the CAT model of rate heterogeneity \citep{Stamatakis2006, Stamatakis2014}. For each structure, we then used the respective sequence alignment and phylogenetic tree to infer site-specific substitution rates with Rate4Site using the empirical Bayesian method and the JTT model of sequence evolution \citep{Mayroseetal2004}.
 
     \subsection*{Calculation of Structural Properties}
-In our analysis we used two types of measures of local packing density used in previous studies: Contact Numbe r(CN) and Weighted Contact Number(WCN). For the purposes of our comparison between the two datasets of interest we used the CN and WCN for the enzyme proteins calculated in \cite{Huangetal2014} and the CN and WCN values for the viral proteins from \cite{Shahmoradietal2014}. In both of these works and in \cite{Yehetal2014}, WCN and CN are both defined the same.  Contact Number is defined as the number of $C_{\alpha}$ within a pre-redefined radius, $r_0$. In this case, $r_0$ = 13 as in the previous papers. Weighed Contact Number for a residue, $i$, is defined as in (Liao et al 2005, Huang et al 2014), as:
+In our analysis we used two types of measures of local packing density used in previous studies: Contact Number (CN) and Weighted Contact Number(WCN). For the purposes of our comparison between the two datasets of interest we used the CN and WCN for the enzyme proteins calculated in \cite{Huangetal2014} and the CN and WCN values for the viral proteins from \cite{Shahmoradietal2014}. In both of these works and in \cite{Yehetal2014}, WCN and CN are both defined the same.  Contact Number is defined as the number of $C_{\alpha}$ within a pre-redefined radius, $r_0$. In this case, $r_0$ = 13 as in the previous papers. Weighed Contact Number for a residue, $i$, is defined as in (Liao et al 2005, Huang et al 2014), as:
 	
 	\begin{equation} \label{wcn_eqn}
 		\text{WCN}_i = \sum_{i \neq j}^{N} \frac{1}{r_{ij}^2 } 
@@ -106,8 +106,11 @@ All data and analysis scripts required to reproduce the work are publicly availa
 
 We calculate the strength between the structural properties and site variability by calculating the Spearman correlation, $\rho$,  between the structural property (solvent exposure and local packing density) and site variability, as measured by either evolutionary rate or site entropy. On average the correlations between CN and entropy are larger in absolute magnitude in the enzyme proteins as compared to viral proteins. The average $\rho$ between each structural property and each measure of site variability (entropy and evolutionary rates) can be seen in Table \ref{table:entropy_stats}  and Table \ref{table:rate_stats}. The viral proteins experience much lower site variability. Figure 1 shows the correlations between CN and entropy for the virus and enzyme proteins. Even though on average the correlations in the enzyme proteins are larger as reported, by \cite{Yehetal2014}, the virus proteins still have correlation strengths that are comparable to some of the enzyme proteins with lower correlations. 
 
-\indent  The average site variability of a given protein does not seem to be a significant determinant of the strength of structural correlations (Figures \ref{fig:entropy_cn_cor}A, \ref{fig:entropy_wcn_cor}A, \ref{fig:entropy_rsa_cor}A). However, when examining the variance of entropy there is a clear trend within the enzyme proteins.  Proteins with a higher variance in site variability across the protein typically have have lower correlations (Figures \ref{fig:entropy_cn_cor}B, \ref{fig:entropy_wcn_cor}B, \ref{fig:entropy_rsa_cor}B). If you extrapolate the trend from the enzyme proteins, the viral proteins follow a similar trend. The correlation between the $\rho$ between RSA and entropy and the variance of entropy is positive. The correlation is negative between local packing density (both WCN and CN) and the variance of entropy is negative. Unlike with entropy, there is no relationship between variance of evolutionary rates at sites and any of the measured structural properties (Figure  . There also is a wide spread in the variance of the evolutionary rates across proteins for both the enzyme and viral proteins. Although both evolutionary rate (as measured by Rate4Site) and entropy are measures of site variability, these quantities are distinctly different. Rate4Site measures the rate at which a site changes over time whereas site entropy measure the absolute variation at a site. A site may have a high evolutionary rate if it changes between frequently between the same few amino acids but have low entropy.
+\indent  The average site variability of a given protein does not seem to be a significant determinant of the strength of structural correlations (Figures \ref{fig:entropy_cn_cor}A, \ref{fig:entropy_wcn_cor}A, \ref{fig:entropy_rsa_cor}A). However, when examining the variance of entropy there is a clear trend within the enzyme proteins.  Proteins with a higher variance in site variability across the protein typically have have lower correlations (Figures \ref{fig:entropy_cn_cor}B, \ref{fig:entropy_wcn_cor}B, \ref{fig:entropy_rsa_cor}B). If you extrapolate the trend from the enzyme proteins, the viral proteins follow a similar trend. The correlation between the $\rho$ between RSA and entropy and the variance of entropy is positive. The correlation is negative between local packing density (both WCN and CN) and the variance of entropy is negative. Unlike with entropy, there is no relationship between variance of evolutionary rates at sites and any of the measured structural properties (Figures \ref{fig:var_rate_cor}, \ref{fig:var_rate_rsa_cor}). There also is a wide spread in the variance of the evolutionary rates across proteins for both the enzyme and viral proteins. Although both evolutionary rate (as measured by Rate4Site) and entropy are measures of site variability, these quantities are distinctly different. Rate4Site measures the rate at which a site changes over time whereas site entropy measure the absolute variation at a site. A site may have a high evolutionary rate if it changes between frequently between the same few amino acids but have low entropy. It appears that the rate at which a site evolves is not important for predicting the strength of structure-sequence relationships.
 
+\indent In order to further examine the relationship between entropy and the structure-sequence relationships, we used mean entropy and variance of entropy as predictors of structure-sequence relationships. Table \ref{table:model_stats} illustrates the the coefficients of venous linear models. In all three models that use the mean entropy as a predictor of structure-entropy correlations, the dataset is a significant predictor. For WCN-Entropy correlations, mean entropy is not a significant predictor. Although for CN-Entropy correlations, mean entropy is significant, the coefficient is 0.079 and therefore predictive power is low. The mean site variability of a protein as measured by entropy is not indicative of whether packing density can be used to predict site variation.  Mean Entropy is also not a significant predictor for the strength of the relationship between RSA and Entropy. For all linear models where mean entropy and dataset were used to predict structure-sequence correlations, dataset was a significant predictor. This means that enzyme and virus proteins have different correlations when used mean entropy as a predictor. This agrees with differences seen in the previous works by \cite{Yehetal2014} and \cite{Shahmoradietal2014}.  
+
+\indent However, when looking at the variance in entropy there are some stark differences. For all structural predictors (i.e., CN, WCN and RSA), the variance in entropy at sites within a protein is a significant predictor of the strength of structure-sequence relations. For packing density, proteins with a larger variance in site-wise entropy have lower correlations. Proteins with a higher variance in entropy tend to have stronger RSA-Entropy correlations. When using variance and dataset as predictors of structure-sequence correlations, dataset was not a significant predictor in any model. When looking at the variance of entropy, proteins within both datasets at in a similar fashion. Overall trends seen between the variance of site variation and the strength of structure-sequence relationships is preserved across both datasets. 
 
 \section{Discussion}
 \label{sec:dcr}
@@ -131,25 +134,22 @@ The authors acknowledge the Texas Advanced Computing Center (TACC) at The Univer
             \label{fig:entropy_cn_cor}
     \end{figure}
 
-
     \begin{figure}[H]
             \centerline{\includegraphics[width=7.5in]{entropy_wcn_cor.pdf}}     
             \caption{Correlations between the Weighted Contact Number (WCN) and Entropy. A) Comparison between the correlation coefficients and mean entropy of site in each protein. B) Comparison between correlation coefficients and the variance of entropy of each protein. The enzyme proteins are colored in black and the virus proteins are visualized in red.}
             \label{fig:entropy_wcn_cor}
     \end{figure}
 
-
     \begin{figure}[H]
             \centerline{\includegraphics[width=7.5in]{entropy_rsa_cor.pdf}}     
             \caption{Correlations between Relative Solvent Accessibility (RSA) and Entropy. A) Comparison between the correlation coefficients and mean entropy of site in each protein. B) Comparison between correlation coefficients and the variance of entropy of each protein. The enzyme proteins are colored in black and the virus proteins are visualized in red.}
             \label{fig:entropy_rsa_cor}
     \end{figure}
-  
-       
+        
         \begin{figure}[H]
             \centerline{\includegraphics[width=7.5in]{rate_cor.pdf}}     
             \caption{Comparison of Rate4Site correlations and the variance of Rate4Site at sites. A) Comparison between the correlation coefficients between CN and Rate4Site and variance of Rate4Site of site in each protein. B) Comparison between correlation coefficients between WCN and Rate4Site and the variance of entropy of each protein. The enzyme proteins are colored in black and the virus proteins are visualized in red.}
-            \label{fig:rate_cor}
+            \label{fig:var_rate_cor}
     \end{figure}
         
             \begin{figure}[H]
@@ -158,11 +158,11 @@ The authors acknowledge the Texas Advanced Computing Center (TACC) at The Univer
             \label{fig:var_rate_rsa_cor}
     \end{figure}
     
-        \begin{figure}[H]
-            \centerline{\includegraphics[width=5.0in]{var_entropy_rate_cor.pdf}}     
-            \caption{Relationship between WCN-Rate4Site correlations and the variance of entropy at sites. The enzyme proteins are colored in black and the virus proteins are colored red. }
-            \label{fig:var_entropy_rate_cor}
-    \end{figure}
+%       \begin{figure}[H]
+%            \centerline{\includegraphics[width=5.0in]{var_entropy_rate_cor.pdf}}     
+%            \caption{Relationship between WCN-Rate4Site correlations and the variance of entropy at sites. The enzyme proteins are colored in black and the virus proteins are colored red. }
+%            \label{fig:var_entropy_rate_cor}
+%    \end{figure}
  
  
         \begin{figure}[H]
@@ -199,7 +199,7 @@ The authors acknowledge the Texas Advanced Computing Center (TACC) at The Univer
 		Virus & $-0.213$ & $-0.217$ & $0.237$ \\
 		\hline	
 	\end{tabular}
-	\caption{Averages of the Spearman Correlation Coefficients between Structural Properties and Evolutionary Rate. Evolutionary rate is calculated with Rate4Site. The structural properties analyzed are solvent accessibility as calculated by RSA and packing density as calculated by CN and WCN}
+	\caption{Averages of the Spearman Correlation Coefficients between Structural Properties and Evolutionary Rate. Evolutionary rate is calculated with Rate4Site. The structural properties analyzed are solvent accessibility as calculated by RSA and packing density as calculated by CN and WCN.}
 	\label{table:rate_stats}
 	\end{table}
 \end{center}
