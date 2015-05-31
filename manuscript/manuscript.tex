@@ -106,7 +106,7 @@ All data and analysis scripts required to reproduce the work are publicly availa
 
 We calculate the strength between the structural properties and site variability by calculating the Spearman correlation, $\rho$,  between the structural property (solvent exposure and local packing density) and site variability, as measured by either evolutionary rate or site entropy. On average the correlations between CN and entropy are larger in absolute magnitude in the enzyme proteins as compared to viral proteins. The average $\rho$ between each structural property and each measure of site variability (entropy and evolutionary rates) can be seen in Table \ref{table:entropy_stats}  and Table \ref{table:rate_stats}. The viral proteins experience much lower site variability. Figure 1 shows the correlations between CN and entropy for the virus and enzyme proteins. Even though on average the correlations in the enzyme proteins are larger as reported, by \cite{Yehetal2014}, the virus proteins still have correlation strengths that are comparable to some of the enzyme proteins with lower correlations. 
 
-\indent  The average site variability of a given protein does not seem to be a significant determinant of the strength of structural correlations (Figures \ref{fig:entropy_cn_cor}A, \ref{fig:entropy_wcn_cor}A, \ref{fig:entropy_rsa_cor}A). However, when examining the variance of entropy there is a clear trend within the enzyme proteins.  Proteins with a higher variance in site variability across the protein typically have have lower correlations (Figures \ref{fig:entropy_cn_cor}B, \ref{fig:entropy_wcn_cor}B, \ref{fig:entropy_rsa_cor}B). If you extrapolate the trend from the enzyme proteins, the viral proteins follow a similar trend. The correlation between the $\rho$ between RSA and entropy and the variance of entropy is positive. The correlation is negative between local packing density (both WCN and CN) and the variance of entropy is negative. Unlike with entropy, there is no relationship between variance of evolutionary rates at sites and any of the measured structural properties. There also is a wide spread int he variance of the evolutionary rates across proteins for both the enzyme and viral proteins. 
+\indent  The average site variability of a given protein does not seem to be a significant determinant of the strength of structural correlations (Figures \ref{fig:entropy_cn_cor}A, \ref{fig:entropy_wcn_cor}A, \ref{fig:entropy_rsa_cor}A). However, when examining the variance of entropy there is a clear trend within the enzyme proteins.  Proteins with a higher variance in site variability across the protein typically have have lower correlations (Figures \ref{fig:entropy_cn_cor}B, \ref{fig:entropy_wcn_cor}B, \ref{fig:entropy_rsa_cor}B). If you extrapolate the trend from the enzyme proteins, the viral proteins follow a similar trend. The correlation between the $\rho$ between RSA and entropy and the variance of entropy is positive. The correlation is negative between local packing density (both WCN and CN) and the variance of entropy is negative. Unlike with entropy, there is no relationship between variance of evolutionary rates at sites and any of the measured structural properties (Figure  . There also is a wide spread in the variance of the evolutionary rates across proteins for both the enzyme and viral proteins. Although both evolutionary rate (as measured by Rate4Site) and entropy are measures of site variability, these quantities are distinctly different. Rate4Site measures the rate at which a site changes over time whereas site entropy measure the absolute variation at a site. A site may have a high evolutionary rate if it changes between frequently between the same few amino acids but have low entropy.
 
 
 \section{Discussion}
@@ -117,13 +117,7 @@ Need a section about:
 Rate4Site is completely different from the entropy variation and we do not know why. Explain the difference. 
 
 \section{Acknowledgements}
-The authors acknowledge the Texas Advanced Computing Center (TACC) at The University of Texas at Austin for providing High-performance computing resources. ELJ is is funded by a National Science Graduate Research Fellowship, grant number DGE-1110007. COW is funded by {\color{red} Which grants??}.  AS is funded by {\color{red} Which grants??}.
-....
-
-%\clearpage
-%\newpage
-
-%\cleardoublepage
+The authors acknowledge the Texas Advanced Computing Center (TACC) at The University of Texas at Austin for providing High-performance computing resources. ELJ is funded by a National Science Graduate Research Fellowship, grant number DGE-1110007. COW is funded by {\color{red} Which grants??}.  AS is funded by {\color{red} Which grants??}.
 
 \bibliographystyle{peerj} %"style
 \bibliography{manuscript_bib} %expected file "my refs.bib"
@@ -133,47 +127,47 @@ The authors acknowledge the Texas Advanced Computing Center (TACC) at The Univer
 
     \begin{figure}[H]
             \centerline{\includegraphics[width=7.5in]{entropy_cn_cor.pdf}}     
-            \caption{NEED A CAPTION!!!.}
+            \caption{Correlations between the Contact Number (CN) and Entropy. For each protein we calculate the Spearman Correlation coefficient between CN and entropy at each site within the protein. A) Comparison between the correlation coefficients and mean entropy of site in each protein. B) Comparison between correlation coefficients and the variance of entropy of each protein. The enzyme proteins are colored in black and the virus proteins are visualized in red. }
             \label{fig:entropy_cn_cor}
     \end{figure}
 
 
     \begin{figure}[H]
             \centerline{\includegraphics[width=7.5in]{entropy_wcn_cor.pdf}}     
-            \caption{NEED A CAPTION!!!.}
+            \caption{Correlations between the Weighted Contact Number (WCN) and Entropy. A) Comparison between the correlation coefficients and mean entropy of site in each protein. B) Comparison between correlation coefficients and the variance of entropy of each protein. The enzyme proteins are colored in black and the virus proteins are visualized in red.}
             \label{fig:entropy_wcn_cor}
     \end{figure}
 
 
     \begin{figure}[H]
             \centerline{\includegraphics[width=7.5in]{entropy_rsa_cor.pdf}}     
-            \caption{NEED A CAPTION!!!.}
+            \caption{Correlations between Relative Solvent Accessibility (RSA) and Entropy. A) Comparison between the correlation coefficients and mean entropy of site in each protein. B) Comparison between correlation coefficients and the variance of entropy of each protein. The enzyme proteins are colored in black and the virus proteins are visualized in red.}
             \label{fig:entropy_rsa_cor}
     \end{figure}
   
        
         \begin{figure}[H]
             \centerline{\includegraphics[width=7.5in]{rate_cor.pdf}}     
-            \caption{NEED A CAPTION!!!.}
+            \caption{Comparison of Rate4Site correlations and the variance of Rate4Site at sites. A) Comparison between the correlation coefficients between CN and Rate4Site and variance of Rate4Site of site in each protein. B) Comparison between correlation coefficients between WCN and Rate4Site and the variance of entropy of each protein. The enzyme proteins are colored in black and the virus proteins are visualized in red.}
             \label{fig:rate_cor}
     \end{figure}
         
             \begin{figure}[H]
             \centerline{\includegraphics[width=5.0in]{var_rate_rsa_cor.pdf}}     
-            \caption{NEED A CAPTION!!!.}
+            \caption{Comparison of the correlations between RSA and Rate4Site and the variance of Rate4Site at sites. The enzyme proteins are colored in black and the virus proteins are visualized in red.}
             \label{fig:var_rate_rsa_cor}
     \end{figure}
     
         \begin{figure}[H]
             \centerline{\includegraphics[width=5.0in]{var_entropy_rate_cor.pdf}}     
-            \caption{NEED A CAPTION!!!.}
+            \caption{Relationship between WCN-Rate4Site correlations and the variance of entropy at sites. The enzyme proteins are colored in black and the virus proteins are colored red. }
             \label{fig:var_entropy_rate_cor}
     \end{figure}
  
  
         \begin{figure}[H]
             \centerline{\includegraphics[width=7.5in]{protein_ex_plot.pdf}}     
-            \caption{NEED A CAPTION!!!. Basically this figure will highlight the difference between mean entropy and variance in entropy.}
+            \caption{Comparison of the mean entropy and the variance of entropy for individual proteins. A)  Variance in entropy at sites compared against overall mean entropy for proteins. Four proteins of interest are highlighted by open circles. The enzyme proteins are colored in black and the virus proteins are colored red B) Distributions of site-wise entropy values for four enzyme proteins. }
             \label{fig:protein_ex_plot}
     \end{figure}
      
@@ -189,7 +183,7 @@ The authors acknowledge the Texas Advanced Computing Center (TACC) at The Univer
 		Virus & $-0.213$ & $-0.217$ & $0.237$ \\
 		\hline	
 	\end{tabular}
-	\caption{NEED A CAPTION}
+	\caption{Averages of the Spearman Correlation Coefficients between Structural Properties and Entropy. The structural properties analyzed are solvent accessibility as calculated by RSA and packing density as calculated by CN and WCN.}
 	\label{table:entropy_stats}
 	\end{table}
 \end{center}
@@ -205,7 +199,7 @@ The authors acknowledge the Texas Advanced Computing Center (TACC) at The Univer
 		Virus & $-0.213$ & $-0.217$ & $0.237$ \\
 		\hline	
 	\end{tabular}
-	\caption{NEED A CAPTION}
+	\caption{Averages of the Spearman Correlation Coefficients between Structural Properties and Evolutionary Rate. Evolutionary rate is calculated with Rate4Site. The structural properties analyzed are solvent accessibility as calculated by RSA and packing density as calculated by CN and WCN}
 	\label{table:rate_stats}
 	\end{table}
 \end{center}
@@ -233,7 +227,7 @@ The authors acknowledge the Texas Advanced Computing Center (TACC) at The Univer
 
 	\hline
 	\end{tabular}
-	\caption{NEED A CAPTION. *** means p-value is less than 0.001. ** means p-value is less than 0.01.  * means p-value is less than 0.05. }
+	\caption{Linear models predicting structural correlations with various quantities. Coefficient x represents the coefficient of the predictor, coefficient x is the coefficient of the second predictor and coefficient z is the coefficient of the third predictor in each model.  *** means p-value is less than 0.001. ** means p-value is less than 0.01.  * means p-value is less than 0.05. }
 	\label{table:model_stats}
 	\end{table}
 \end{center}
