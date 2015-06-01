@@ -1,0 +1,20 @@
+library(dplyr)
+
+correlation_data = read.csv("../data_summaries/output_files/all_protein_summary_stats.csv")
+correlation_data = rename(correlation_data, dataset = data_id)
+
+model1 = lm(data = correlation_data, cn_entropy_rho ~ mean_entropy + dataset + dataset:mean_entropy)
+summary(model1)
+model2 = lm(data = correlation_data, wcn_entropy_rho ~ mean_entropy + dataset + dataset:mean_entropy)
+summary(model2)
+model3 = lm(data = correlation_data, rsa_entropy_rho ~ mean_entropy + dataset + dataset:mean_entropy)
+summary(model3)
+model4 = lm(data = correlation_data, cn_entropy_rho ~ var_entropy + dataset + dataset:var_entropy)
+summary(model4)
+model5 = lm(data = correlation_data, wcn_entropy_rho ~ var_entropy + dataset + dataset:var_entropy)
+summary(model5)
+model6 = lm(data = correlation_data, rsa_entropy_rho ~ var_entropy + dataset + dataset:var_entropy)
+summary(model6)
+
+mean_data = correlation_data %>% group_by(dataset) %>% summarize(mean_mean_entropy = mean(mean_entropy), sd_mean_entropy = sd(mean_entropy), var_mean_entropy = var(mean_entropy), mean_cn_entropy_rho = mean(cn_entropy_rho),  mean_wcn_entropy_rho = mean(wcn_entropy_rho), mean_rsa_entropy_rho = mean(rsa_entropy_rho), mean_rate_cn_rho = mean(rate_cn_rho), mean_rate_wcn_rho = mean(rate_wcn_rho), mean_rate_rsa_rho = mean(rate_rsa_rho))
+write.csv(mean_data, "../data_summaries/output_files/mean_summary_data.csv")
