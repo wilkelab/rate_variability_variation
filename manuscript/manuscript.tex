@@ -123,8 +123,6 @@ Structure imposes constraints on the the evolution of proteins. Therefore struct
 \indent Here we performed examined the relationship between site variability and the strength of structure-sequence relationships. We found that proteins with a larger variance in site variability as measured by sequence entropy, have stronger structure-sequence relationships on average. However, when looking at the mean entropy values of proteins there is a distinct difference between the virus and enzyme datasets. Overall the enzyme proteins have a higher site variability than the virus proteins. When predicting the structure-sequence relationships the variance in site variability among proteins is a better predictor than mean site variations. It appears that site variability and evolutionary rate are not equal measures of site variability in terms of predicting the strength of structure-sequence relationships. Additionally the reason that the enzyme proteins in \cite{Yehetal2014} had higher correlation coefficients is that on average, the enzyme proteins have larger variance in entropy as compared to the virus proteins of \cite{Shahmoradietal2014}. Moreover, since the variance is entropy is is a more significant predictor of correlation's in local packing density, an increase level of variance in site variability will have a larger effect on the local packing density correlations. This would explain why the local packing density correlations were of a higher magnitude compared to the RSA correlations within the enzyme proteins of /\cite{Yehetal2014}. Finally, The variance in evolutionary rate among sites of a protein does not have an effect on the correlation magnitude. This suggests that the absolute variability at sites is a better predictor of whether structural determinants can be used to predict variability at sites  as opposed to evolutionary rate. Therefore when examining structural determinants of site variability, entropy is a may be a more meaningful quantity. 
 
 
-
-
 \section{Acknowledgements}
 The authors acknowledge the Texas Advanced Computing Center (TACC) at The University of Texas at Austin for providing High-performance computing resources. ELJ is funded by a National Science Graduate Research Fellowship, grant number DGE-1110007. COW is funded by {\color{red} Which grants??}.  AS is funded by {\color{red} Which grants??}.
 
@@ -136,7 +134,7 @@ The authors acknowledge the Texas Advanced Computing Center (TACC) at The Univer
 
     \begin{figure}[H]
             \centerline{\includegraphics[width=7.5in]{entropy_cn_cor.pdf}}     
-            \caption{Correlations between the Contact Number (CN) and Entropy. For each protein we calculate the Spearman Correlation coefficient between CN and entropy at each site within the protein. A) Comparison between the correlation coefficients and mean entropy of site in each protein. B) Comparison between correlation coefficients and the variance of entropy of each protein. The enzyme proteins are colored in black and the virus proteins are visualized in red. }
+            \caption{Correlations between the Contact Number (CN) and Entropy. For each protein we calculate the Spearman Correlation coefficient between CN and entropy at each site within the protein. A) Comparison between the correlation coefficients and mean entropy of site in each protein. B) Comparison between correlation coefficients and the variance of entropy of each protein. The enzyme proteins are colored in black and the virus proteins are visualized in red. For both WCN and CN the viral proteins have lower mean entropy and variance of entropy. The line indicates a linear regression through the enzyme proteins with variance entropy as a single predictor of the spearman correlations. }
             \label{fig:entropy_cn_cor}
     \end{figure}
 
@@ -154,13 +152,13 @@ The authors acknowledge the Texas Advanced Computing Center (TACC) at The Univer
         
         \begin{figure}[H]
             \centerline{\includegraphics[width=7.5in]{rate_cor.pdf}}     
-            \caption{Comparison of Rate4Site correlations and the variance of Rate4Site at sites. A) Comparison between the correlation coefficients between CN and Rate4Site and variance of Rate4Site of site in each protein. B) Comparison between correlation coefficients between WCN and Rate4Site and the variance of entropy of each protein. The enzyme proteins are colored in black and the virus proteins are visualized in red.}
+            \caption{Comparison of Rate4Site correlations and the variance of Rate4Site at sites. A) Comparison between the correlation coefficients between CN and Rate4Site and variance of Rate4Site of site in each protein. B) Comparison between correlation coefficients between WCN and Rate4Site and the variance of entropy of each protein. The enzyme proteins are colored in black and the virus proteins are visualized in red. There is no observable trend between the variance of evolutionary rate and the spearman correlations. }
             \label{fig:var_rate_cor}
     \end{figure}
         
             \begin{figure}[H]
             \centerline{\includegraphics[width=5.0in]{var_rate_rsa_cor.pdf}}     
-            \caption{Comparison of the correlations between RSA and Rate4Site and the variance of Rate4Site at sites. The enzyme proteins are colored in black and the virus proteins are visualized in red.}
+            \caption{Comparison of the correlations between RSA and Rate4Site and the variance of Rate4Site at sites. The enzyme proteins are colored in black and the virus proteins are visualized in red. The variance of evolutionary rate of a protein, as measured by Rate4Site, does not a correlation within the spearman correlation between RSA and evolutionary rate for a given protein.}
             \label{fig:var_rate_rsa_cor}
     \end{figure}
     
