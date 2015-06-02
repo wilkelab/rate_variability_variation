@@ -157,7 +157,7 @@ The authors acknowledge the Texas Advanced Computing Center (TACC) at The Univer
     \end{figure}
         
             \begin{figure}[H]
-            \centerline{\includegraphics[width=5.0in]{var_rate_rsa_cor.pdf}}     
+            \centerline{\includegraphics[width=4in]{var_rate_rsa_cor.pdf}}     
             \caption{Comparison of the correlations between RSA and Rate4Site and the variance of Rate4Site at sites. The enzyme proteins are colored in black and the virus proteins are visualized in red. The variance of evolutionary rate of a protein, as measured by Rate4Site, does not have a correlation with the spearman correlation between RSA and evolutionary rate for a given protein.}
             \label{fig:var_rate_rsa_cor}
     \end{figure}
@@ -171,7 +171,7 @@ The authors acknowledge the Texas Advanced Computing Center (TACC) at The Univer
  
         \begin{figure}[H]
             \centerline{\includegraphics[width=7.5in]{protein_ex_plot.pdf}}     
-            \caption{Comparison of the mean entropy and the variance of entropy for individual proteins. A)  Variance in entropy at sites compared against overall mean entropy for proteins. Four proteins of interest are highlighted by open circles. The enzyme proteins are colored in black and the virus proteins are colored red B) Distributions of site-wise entropy values for the four enzyme proteins highlighted in A. There are a variety of distributions in site entropy for different proteins.}
+            \caption{Comparison of the mean entropy and the variance of entropy for individual proteins. A)  Variance in entropy at sites compared against overall mean entropy for proteins. Four proteins of interest are highlighted by open circles. The enzyme proteins are colored in black and the virus proteins are colored red B-F) Distributions of site-wise entropy values for the five enzyme proteins highlighted in A. There are a variety of distributions in site entropy for different proteins.}
             \label{fig:protein_ex_plot}
     \end{figure}
      
@@ -182,8 +182,8 @@ The authors acknowledge the Texas Advanced Computing Center (TACC) at The Univer
 		\hline
 		Dataset & Mean $\rho$ Entropy-CN  & Mean $\rho$ Entropy-WCN & Mean $\rho$ Entropy-RSA \\
 		\hline	
-		Enzyme &  $-0.445$  & $-0.432$ & $0.464$ \\
-		\hline
+		Enzyme &  $-0.445$  & $-0.432$ & $0.464$ \\[0.10cm]
+	
 		Virus & $-0.213$ & $-0.217$ & $0.237$ \\
 		\hline	
 	\end{tabular}
@@ -198,8 +198,8 @@ The authors acknowledge the Texas Advanced Computing Center (TACC) at The Univer
 		\hline
 		Dataset & Mean $\rho$ Rate4Site-CN  & Mean $\rho$ Rate4Site-WCN & Mean $\rho$ Rate4Site-RSA \\
 		\hline	
-		Enzyme &  $-0.445$  & $-0.432$ & $0.464$ \\
-		\hline
+		Enzyme &  $-0.445$  & $-0.432$ & $0.464$ \\[0.10cm]
+	
 		Virus & $-0.213$ & $-0.217$ & $0.237$ \\
 		\hline	
 	\end{tabular}
@@ -211,30 +211,60 @@ The authors acknowledge the Texas Advanced Computing Center (TACC) at The Univer
 %Should I report the intercept%
 \begin{center}
 	\begin{table}[H]
-	\begin{tabular}{ | p{5.0cm} | p{3cm} | p{3cm} | p{3cm} | }
+	\begin{tabular}{ | p{5.0cm} | p{3cm} | p{3cm} | p{4cm} | }
 	\hline
-	Model & Coefficient x  & Coefficient y & Coefficient z \\	
+	Model & $\left \langle H \right \rangle$  & Dataset & Dataset*$\left \langle H \right \rangle$ \\	
 	\hline
-	CN-Entropy $\rho$ $ = $ Mean Entropy + Dataset + Dataset*Mean Entropy & $0.079 ^{**}$ & $0.382^{***}$  & $-0.583$ \\	
-	\hline
-	WCN-Entropy $\rho$ $ = $ Mean Entropy + Dataset + Dataset*Mean Entropy & $0.049$ & $0.323^{***}$ & $-0.568$  \\	
-	\hline
+	$\rho  \text{\_CN--H}$   $ = $  $\left \langle H \right \rangle$ + Dataset + Dataset*$\left \langle H \right \rangle$ & $0.079 ^{**}$ & $0.382^{***}$  & $-0.583$   \\[1.2cm] 
+		
+	$\rho  \text{\_WCN--H}$  $ = $  $\left \langle H \right \rangle$ + Dataset + Dataset*$\left \langle H \right \rangle$& $0.049$ & $0.323^{***}$ & $-0.568$  \\[1.2cm] 	 
+	 
+	$\rho  \text{\_RSA--H}$  $ = $ $\left \langle H \right \rangle$ + Dataset + Dataset*$\left \langle H \right \rangle$ &  $-0.030$ & $-0.336^{***}$ & $0.903^{*}$ \\[1.2cm]
 
-	RSA-Entropy $\rho$ $ = $ Mean Entropy + Dataset + Dataset*Mean Entropy &  $-0.0300$ & $-0.336^{***}$ & $0.903^{*}$ \\	
-
-	\hline
-	CN-Entropy $\rho$ $ = $ Variance Entropy + Dataset + Dataset*Variance Entropy & $-0.522^{***}$ &  $0.013$ & $-0.265$ \\	
-	\hline
-	WCN-Entropy $\rho$ $ = $ Variance Entropy + Dataset + Dataset*Variance Entropy & $-0.464^{***}$ &  $0.023$ & $-0.325$ \\	
-	\hline
-	RSA-Entropy $\rho$ $ = $ Variance Entropy + Dataset + Dataset*Variance Entropy & $0.415^{***}$ & $-0.076$ & $0.927$ \\	
-
+	$\rho  \text{\_CN--H}$   $ = $  $\left \langle H \right \rangle$ + Dataset + Dataset*$\left \langle H \right \rangle$ & $0.077^{**}$ & $0.336^{***}$  & NA  \\[1.2cm] 
+		
+	$\rho  \text{\_WCN--H}$  $ = $  $\left \langle H \right \rangle$ + Dataset + Dataset*$\left \langle H \right \rangle$& $ 0.047$ & $0.278^{***}$ & NA  \\[1.2cm] 	 
+	 
+	$\rho  \text{\_RSA--H}$  $ = $ $\left \langle H \right \rangle$ + Dataset + Dataset*$\left \langle H \right \rangle$ &  $-0.027$ & $ -0.264^{***}$ & NA \\
+		
+	
+	
+	
 	\hline
 	\end{tabular}
 	\caption{Linear models predicting structural correlations with various quantities. Coefficient x represents the coefficient of the first predictor, coefficient y is the coefficient of the second predictor and coefficient z is the coefficient of the third predictor in each model.  *** means the p-value is less than 0.001. ** means the p-value is less than 0.01.  * means the p-value is less than 0.05. }
 	\label{table:model_stats}
 	\end{table}
 \end{center}
+
+\begin{center}
+	\begin{table}[H]
+	\begin{tabular}{ | p{5.0cm} | p{3cm} | p{3cm} | p{4cm} | }
+	\hline
+	Model & Variance H  & Dataset & Dataset*Variance H \\	
+	\hline
+	$\rho  \text{\_CN--H}$ $ = $ Variance H + Dataset + Dataset*Variance H & $-0.522^{***}$ &  $0.013$ & $-0.265$ \\[1.3cm] 	
+	
+	$\rho  \text{\_WCN--H}$ $ = $ Variance H + Dataset + Dataset*Variance H& $-0.464^{***}$ &  $0.023$ & $-0.325$ \\ [1.3cm] 	
+	
+	$\rho  \text{\_RSA--H}$ $ = $ Variance H + Dataset + Dataset*Variance H & $0.415^{***}$ & $-0.076$ & $0.927$ \\	
+	
+		$\rho  \text{\_CN--H}$ $ = $ Variance H + Dataset + Dataset*Variance H & $-0.524^{***}$ &  $0.004$ & NA \\[1.3cm] 	
+	
+	$\rho  \text{\_WCN--H}$ $ = $ Variance H + Dataset + Dataset*Variance H& $-0.466 ^{***}$ &  $ 0.012$ & NA \\ [1.3cm] 	
+	
+	$\rho  \text{\_RSA--H}$ $ = $ Variance H + Dataset + Dataset*Variance H & $0.422^{***}$ & $-0.044$ & NA \\	
+	
+	
+	\hline
+	\end{tabular}
+	\caption{Linear models predicting structural correlations with various quantities. Coefficient x represents the coefficient of the first predictor, coefficient y is the coefficient of the second predictor and coefficient z is the coefficient of the third predictor in each model.  *** means the p-value is less than 0.001. ** means the p-value is less than 0.01.  * means the p-value is less than 0.05. }
+	\label{table:model_stats}
+	\end{table}
+\end{center}
+
+
+
 
 \end{document}
 
