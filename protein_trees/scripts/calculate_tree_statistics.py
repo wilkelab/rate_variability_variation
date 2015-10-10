@@ -41,11 +41,8 @@ def main():
 
 
     output_file = "tree_statistics.txt"
-    enzyme_directory = "../protein_trees/enzyme_trees/"    
-    viral_directory = "../protein_trees/virus_trees/"
-    
-    #enzyme_directory = "../evol_rates/enzyme_proteins/raxml_trees/"
-    #viral_directory = "../evol_rates/viral_proteins/trees/"
+    enzyme_directory = "../virus_trees/"
+    viral_directory = "../enzyme_trees/"
     enzyme_trees = os.listdir(enzyme_directory)
     viral_trees  = os.listdir(viral_directory)
     
@@ -56,8 +53,7 @@ def main():
     for tree in viral_trees:
         print tree
         values = extract_tree_info(viral_directory + tree)
-        #getname = re.search(r"tree_(.+)\.tre", tree)
-        getname = re.search(r"RAxML_bestTree\.(\w+_\w)_.+", tree)
+        getname = re.search(r"tree_(.+)\.tre", tree)
         if getname:
             name = getname.group(1)
         with open(output_file,"a") as f:
